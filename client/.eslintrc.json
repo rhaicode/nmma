@@ -74,6 +74,9 @@
     "jsx-a11y/anchor-is-valid": "off",
     "comma-dangle": "off",
     "quotes": "off",
-    "no-undef": "off"
+    "no-undef": "off",
+    "semi": "off",
+    "linebreak-style": "off",
+    "arrow-parens": "off"
   }
 }
