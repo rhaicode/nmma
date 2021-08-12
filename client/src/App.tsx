@@ -1,5 +1,8 @@
 import { Switch, Route } from 'react-router-dom'
+
 import Dashboard from './pages/Dashboard'
+import Event from './pages/Event'
+import Company from './pages/Company'
 
 const App: React.FC = () => (
   <Switch>
@@ -7,10 +10,10 @@ const App: React.FC = () => (
       <Dashboard />
     </Route>
     <Route exact path="/event">
-      <Dashboard />
+      <Event />
     </Route>
     <Route exact path="/company">
-      <Dashboard />
+      <Company />
     </Route>
   </Switch>
 )

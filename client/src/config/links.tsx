@@ -1,22 +1,20 @@
-import { ReactComponent as HomeLogo } from '../assets/home.svg'
-import { ReactComponent as EventLogo } from '../assets/event.svg'
-import { ReactComponent as CompanyLogo } from '../assets/company.svg'
+import { FiHome, FiCalendar, FiBriefcase } from 'react-icons/fi'
 
 const links = [
   {
     label: 'Dashboard',
     url: '/',
-    icon: <HomeLogo />,
+    icon: <FiHome color="white" fontSize="20px" />,
   },
   {
     label: 'Event',
     url: '/event',
-    icon: <EventLogo />,
+    icon: <FiCalendar color="white" fontSize="20px" />,
   },
   {
     label: 'Company',
     url: '/company',
-    icon: <CompanyLogo />,
+    icon: <FiBriefcase color="white" fontSize="20px" />,
   },
 ]
 

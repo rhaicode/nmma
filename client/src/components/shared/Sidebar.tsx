@@ -2,14 +2,14 @@ import { Box, Flex, Text } from '@chakra-ui/react'
 import { useHistory, useLocation } from 'react-router-dom'
 
 import links from '../../config/links'
-import { ReactComponent as DiscoverBoatingLogo } from '../../assets/discover-boating.svg'
+import { ReactComponent as DiscoverBoatingLogo } from '../../assets/svg/discover-boating.svg'
 
 const Sidebar: React.FC = () => {
   const location = useLocation()
   const history = useHistory()
 
   return (
-    <Box minH="100vh" w="245px" backgroundColor="black">
+    <Box minH="100vh" w="245px" backgroundColor="black" flex="none">
       <Box padding="30px">
         <DiscoverBoatingLogo />
       </Box>
@@ -22,7 +22,6 @@ const Sidebar: React.FC = () => {
             <Flex
               as="li"
               key={l.label}
-              alignItems="center"
               padding="16px 30px"
               cursor="pointer"
               {...(isActive && {
@@ -33,19 +32,11 @@ const Sidebar: React.FC = () => {
               }}
               mb="4px"
             >
-              <Box width="48px" height="20px">
+              <Text as="span" mr="20px" mt="1px">
                 {l.icon}
-              </Box>
+              </Text>
 
-              <Text
-                as="span"
-                color="white"
-                fontWeight="300"
-                fontSize="16px"
-                display="block"
-                lineHeight="26px"
-                mt="8px"
-              >
+              <Text as="span" color="white" fontWeight="300" fontSize="16px">
                 {l.label}
               </Text>
             </Flex>
