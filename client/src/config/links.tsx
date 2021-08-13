@@ -7,8 +7,8 @@ const links = [
     icon: <FiHome color="white" fontSize="20px" />,
   },
   {
-    label: 'Event',
-    url: '/event',
+    label: 'Shows',
+    url: '/shows',
     icon: <FiCalendar color="white" fontSize="20px" />,
   },
   {
