@@ -1,7 +1,7 @@
 import { Switch, Route } from 'react-router-dom'
 
 import Dashboard from './pages/Dashboard'
-import Event from './pages/Event'
+import Shows from './pages/Shows'
 import Company from './pages/Company'
 
 const App: React.FC = () => (
@@ -9,8 +9,8 @@ const App: React.FC = () => (
     <Route exact path="/">
       <Dashboard />
     </Route>
-    <Route exact path="/event">
-      <Event />
+    <Route exact path="/shows">
+      <Shows />
     </Route>
     <Route exact path="/company">
       <Company />
