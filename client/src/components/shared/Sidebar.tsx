@@ -13,7 +13,7 @@ const Sidebar: React.FC = () => {
       <Box padding="30px">
         <DiscoverBoatingLogo />
       </Box>
-      <Box as="ul" mt="50px">
+      <Box as="ul" mt="56px">
         {links.map(l => {
           const path = location.pathname.split('/')[1]
           const isActive = `/${path}` === l.url
