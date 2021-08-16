@@ -78,6 +78,7 @@
     "semi": "off",
     "linebreak-style": "off",
     "arrow-parens": "off",
-    "object-curly-newline": "off"
+    "object-curly-newline": "off",
+    "no-shadow": "off"
   }
 }

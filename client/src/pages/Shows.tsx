@@ -1,7 +1,10 @@
-import { Checkbox, Tbody, Td, Text, Th, Thead, Tr } from '@chakra-ui/react'
+import { Button, Flex, Text } from '@chakra-ui/react'
+import uuid from 'react-uuid'
+import { FiPlus } from 'react-icons/fi'
 
 import { ThemedTable } from '../components/shared'
 import DefaultLayout from '../layouts/DefaultLayout'
+import { StatusName } from '../components/shared/Status'
 
 const columns = [
   'ID',
@@ -11,87 +14,51 @@ const columns = [
   'Location',
   'Venue',
   'Start Date',
+  'End Date',
+  'Status',
+  'Website',
 ]
+const list = Array.from({ length: 7 }).map(() => ({
+  uuid: uuid(),
+  id: '001',
+  producerEventCode: 'CBS2021',
+  eventFamily: 'All iterations of the...',
+  description: 'Lorem ipsum dolor...',
+  location: '123 Street Name...',
+  venue: '123 Street Name...',
+  startDate: 'Aug 10 2021',
+  endDate: 'Aug 10 2021',
+  status: StatusName.Pending,
+  website: 'www.example....',
+}))
 
-const Shows: React.FC = () => {
-  const list = Array.from({ length: 7 })
-
-  return (
-    <DefaultLayout>
+const Shows: React.FC = () => (
+  <DefaultLayout noXPadding>
+    <Flex justifyContent="space-between" alignItems="center" px="49px">
       <Text as="span" fontSize="32px" fontWeight="600">
         Shows
       </Text>
-
-      <ThemedTable variant="simple" mt="60px">
-        <Thead
-          border="1px solid"
-          borderColor="transparent"
-          backgroundColor="transparent"
-          borderRadius="10px"
-        >
-          <Tr
-            h="60px"
-            backgroundColor="white"
-            boxShadow="0px 4px 5px rgba(0, 0, 0, 0.05)"
-            borderRadius="10px"
-          >
-            <Th borderTopLeftRadius="10px" borderBottomLeftRadius="10px">
-              <Checkbox />
-            </Th>
-
-            {columns.map((c, i) => (
-              <Th
-                textTransform="capitalize"
-                key={c}
-                color="darkGray"
-                fontSize="13px"
-                fontWeight="600"
-                {...(i === columns.length - 1 && {
-                  borderTopRightRadius: '10px',
-                  borderBottomRightRadius: '10px',
-                })}
-              >
-                {c}
-              </Th>
-            ))}
-          </Tr>
-        </Thead>
-        <Tbody
-          border="1px solid"
-          borderColor="transparent"
-          backgroundColor="transparent"
-          borderRadius="10px"
-        >
-          <Tr height="30px" />
-          {list.map((l, i) => (
-            <>
-              <Tr
-                h="70px"
-                backgroundColor="white"
-                boxShadow="0px 4px 5px rgba(0, 0, 0, 0.05)"
-                borderRadius="10px"
-                color="darkGray"
-              >
-                <Td borderTopLeftRadius="10px" borderBottomLeftRadius="10px">
-                  <Checkbox />
-                </Td>
-                <Td>001</Td>
-                <Td>CBS2021</Td>
-                <Td>All iterations of the...</Td>
-                <Td>Lorem ipsum dolor...</Td>
-                <Td>123 Street Name...</Td>
-                <Td>123 Street Name...</Td>
-                <Td borderTopRightRadius="10px" borderBottomRightRadius="10px">
-                  10 Aug 2021
-                </Td>
-              </Tr>
-              {i < list.length - 1 && <Tr height="11px" />}
-            </>
-          ))}
-        </Tbody>
-      </ThemedTable>
-    </DefaultLayout>
-  )
-}
+      <Button
+        leftIcon={<FiPlus color="white" fontSize="22px" />}
+        backgroundColor="violet"
+        _hover={{ backgroundColor: '#2e02b4' }}
+        _active={{
+          backgroundColor: 'violet',
+        }}
+        height="55px"
+        width="158px"
+        borderRadius="10px"
+        color="white"
+        fontSize="16px"
+        fontWeight="normal"
+      >
+        <Text as="span" ml="8px">
+          Create
+        </Text>
+      </Button>
+    </Flex>
+    <ThemedTable columns={columns} rows={list} />
+  </DefaultLayout>
+)
 
 export default Shows
