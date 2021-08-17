@@ -16,7 +16,7 @@ import { camelCase } from 'lodash'
 
 import useTableEvents from '../../utils/useTableEvents'
 import Status, { StatusName } from './Status'
-import { Pagination } from '../partials'
+import { Pagination } from './index'
 
 const StyledTable = styled(Table)`
   & {
@@ -165,7 +165,7 @@ const ThemedTable: React.FC<ThemedTableProps> = ({ columns, rows }) => {
                       </Box>
                     </Td>
                   </Tr>
-                  {i < rows.length - 1 && <Tr height="11px" />}
+                  {i < rows.length - 1 && <Tr key={r.uuid} height="11px" />}
                 </>
               ))
             ) : (

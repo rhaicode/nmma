@@ -1,4 +1,4 @@
-import CompanyCard from './CompanyCard'
-import Pagination from './Pagination'
+import CreateCompanyForm from './forms/CreateCompanyForm'
+import CreateShowForm from './forms/CreateShowForm'
 
-export { CompanyCard, Pagination }
+export { CreateCompanyForm, CreateShowForm }

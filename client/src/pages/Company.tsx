@@ -1,8 +1,9 @@
-import { Button, Flex, Text } from '@chakra-ui/react'
+import { Flex, Text, useDisclosure } from '@chakra-ui/react'
 import { FiPlus } from 'react-icons/fi'
 import uuid from 'react-uuid'
+import { CreateCompanyForm } from '../components/partials'
 
-import { ThemedTable } from '../components/shared'
+import { ThemedButton, ThemedTable } from '../components/shared'
 import DefaultLayout from '../layouts/DefaultLayout'
 
 const columns = [
@@ -39,33 +40,30 @@ const list = Array.from({ length: 7 }).map(() => ({
   isMrraDealerCertified: 'Yes',
 }))
 
-const Company: React.FC = () => (
-  <DefaultLayout noXPadding>
-    <Flex justifyContent="space-between" alignItems="center" px="49px">
-      <Text as="span" fontSize="32px" fontWeight="600">
-        Company
-      </Text>
-      <Button
-        leftIcon={<FiPlus color="white" fontSize="22px" />}
-        backgroundColor="violet"
-        _hover={{ backgroundColor: '#2e02b4' }}
-        _active={{
-          backgroundColor: 'violet',
-        }}
-        height="55px"
-        width="158px"
-        borderRadius="10px"
-        color="white"
-        fontSize="16px"
-        fontWeight="normal"
-      >
-        <Text as="span" ml="8px">
-          Create
-        </Text>
-      </Button>
-    </Flex>
-    <ThemedTable columns={columns} rows={list} />
-  </DefaultLayout>
-)
+const Company: React.FC = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure()
 
+  return (
+    <>
+      <DefaultLayout noXPadding>
+        <Flex justifyContent="space-between" alignItems="center" px="49px">
+          <Text as="span" fontSize="32px" fontWeight="600">
+            Company
+          </Text>
+          <ThemedButton
+            type="button"
+            onClick={onOpen}
+            leftIcon={<FiPlus color="white" fontSize="22px" />}
+          >
+            <Text as="span" ml="8px">
+              Create
+            </Text>
+          </ThemedButton>
+        </Flex>
+        <ThemedTable columns={columns} rows={list} />
+      </DefaultLayout>
+      <CreateCompanyForm isOpen={isOpen} onClose={onClose} />
+    </>
+  )
+}
 export default Company
