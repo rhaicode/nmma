@@ -7,6 +7,7 @@ type ThemedSelectProps = {
   isSearchable?: boolean
   defaultValue: { label: string; value: string }
   maxWidthOptions: number
+  color?: string
 }
 
 const StyledSelect = styled(Select)`
@@ -30,7 +31,8 @@ const StyledSelect = styled(Select)`
         cursor: pointer !important;
         div {
           font-size: 14px;
-          color: #989da9;
+          color: ${props => props.selectedColor ?? '#989da9'};
+
           margin-left: 10px;
         }
       }
@@ -47,12 +49,14 @@ type ColourStyleArgs = {
   marginTopAtValueOf: string
   marginBottomAtValueOf: string
   maxWidthOptions: number
+  selectedColor: string
 }
 
 const colourStyles = ({
   marginTopAtValueOf,
   marginBottomAtValueOf,
   maxWidthOptions,
+  selectedColor,
 }: ColourStyleArgs) => ({
   option: (styles: any, { data, isSelected, isFocused, isDisabled }: any) => {
     const defaultColor = isFocused ? '#F7F8FB' : 'white'
@@ -60,7 +64,7 @@ const colourStyles = ({
     return {
       ...styles,
       backgroundColor: isSelected ? '#F7F8FB' : defaultColor,
-      color: isSelected ? '#3300CC' : '#989DA9',
+      color: isSelected ? '#3300CC' : selectedColor,
       fontSize: '14px',
       borderRadius: '10px',
       maxWidth: maxWidthOptions,
@@ -82,9 +86,11 @@ const ThemedSelect: React.FC<ThemedSelectProps> = ({
   isSearchable,
   defaultValue,
   maxWidthOptions,
+  color,
 }) => {
   const marginTopAtValueOf = options[0].value
   const marginBottomAtValueOf = options.slice(-1)[0].value
+  const selectedColor = color ?? '#989DA9'
 
   return (
     <StyledSelect
@@ -96,7 +102,9 @@ const ThemedSelect: React.FC<ThemedSelectProps> = ({
         marginTopAtValueOf,
         marginBottomAtValueOf,
         maxWidthOptions,
+        selectedColor,
       })}
+      selectedColor={selectedColor}
     />
   )
 }

@@ -19,7 +19,7 @@ import {
 } from '../../shared'
 import { StatusName } from '../../shared/Status'
 
-type CreateShowFormFormProps = {
+type CreateShowFormProps = {
   isOpen: boolean
   onClose: () => void
 }
@@ -45,10 +45,7 @@ const options = {
   ],
 }
 
-const CreateShowFormForm: React.FC<CreateShowFormFormProps> = ({
-  isOpen,
-  onClose,
-}) => (
+const CreateShowForm: React.FC<CreateShowFormProps> = ({ isOpen, onClose }) => (
   <Modal isOpen={isOpen} onClose={onClose}>
     <ModalOverlay />
     <ModalContent p="0px" minW="700px">
@@ -134,4 +131,4 @@ const CreateShowFormForm: React.FC<CreateShowFormFormProps> = ({
   </Modal>
 )
 
-export default CreateShowFormForm
+export default CreateShowForm

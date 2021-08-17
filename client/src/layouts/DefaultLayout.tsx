@@ -2,12 +2,14 @@ import { Box, Flex } from '@chakra-ui/react'
 import { Sidebar, Topbar } from '../components/shared'
 
 type DefaultLayoutProps = {
-  noXPadding?: true
+  noXPadding?: boolean
+  noYPadding?: boolean
 }
 
 const DefaultLayout: React.FC<DefaultLayoutProps> = ({
   children,
   noXPadding,
+  noYPadding,
 }) => (
   <Flex overflow="hidden">
     <Sidebar />
@@ -16,7 +18,9 @@ const DefaultLayout: React.FC<DefaultLayoutProps> = ({
       <Box
         minH="calc(100vh - 80px)"
         backgroundColor="lightGray"
-        padding={`67px ${noXPadding ? '0px' : '49px'}`}
+        padding={`${noYPadding ? '0px' : '67px'} ${
+          noXPadding ? '0px' : '49px'
+        }`}
       >
         {children}
       </Box>
