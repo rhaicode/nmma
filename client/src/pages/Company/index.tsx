@@ -1,10 +1,10 @@
 import { Flex, Text, useDisclosure } from '@chakra-ui/react'
 import { FiPlus } from 'react-icons/fi'
 import uuid from 'react-uuid'
-import { CreateCompanyForm } from '../components/partials'
+import { CreateCompanyForm } from '../../components/partials'
 
-import { ThemedButton, ThemedTable } from '../components/shared'
-import DefaultLayout from '../layouts/DefaultLayout'
+import { ThemedButton, ThemedTable } from '../../components/shared'
+import DefaultLayout from '../../layouts/DefaultLayout'
 
 const columns = [
   'ID',

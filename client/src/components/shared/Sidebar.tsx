@@ -4,9 +4,15 @@ import { useHistory, useLocation } from 'react-router-dom'
 import links from '../../config/links'
 import { ReactComponent as DiscoverBoatingLogo } from '../../assets/svg/discover-boating.svg'
 
-const Sidebar: React.FC = () => {
+type SidebarProps = {
+  isPublic?: boolean
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ isPublic }) => {
   const location = useLocation()
   const history = useHistory()
+
+  const shownLinks = !isPublic ? links : links.filter(l => !l.private)
 
   return (
     <Box minH="100vh" w="245px" backgroundColor="black" flex="none">
@@ -14,7 +20,7 @@ const Sidebar: React.FC = () => {
         <DiscoverBoatingLogo />
       </Box>
       <Box as="ul" mt="56px">
-        {links.map(l => {
+        {shownLinks.map(l => {
           const path = location.pathname.split('/')[1]
           const isActive = `/${path}` === l.url
 

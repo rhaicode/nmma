@@ -1,4 +1,5 @@
 import Sidebar from './Sidebar'
+import CompanySidebar from './CompanySidebar'
 import Topbar from './Topbar'
 
 import CompanyCard from './CompanyCard'
@@ -13,6 +14,7 @@ import ThemedTextarea from './ThemedTextarea'
 
 export {
   Sidebar,
+  CompanySidebar,
   Topbar,
   Pagination,
   CompanyCard,

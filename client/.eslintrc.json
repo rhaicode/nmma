@@ -80,6 +80,7 @@
     "arrow-parens": "off",
     "object-curly-newline": "off",
     "no-shadow": "off",
-    "indent": "off"
+    "indent": "off",
+    "operator-linebreak": "off"
   }
 }
