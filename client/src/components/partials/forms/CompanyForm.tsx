@@ -87,7 +87,7 @@ const CompanyForm: React.FC = () => (
             options={options.companyTypeOptions}
             isSearchable={false}
             defaultValue={options.companyTypeOptions[0]}
-            maxWidthOptions={299}
+            maxWidthOptions={349}
             color="black"
           />
         </Box>
@@ -120,7 +120,7 @@ const CompanyForm: React.FC = () => (
             options={options.yesOrNo}
             isSearchable={false}
             defaultValue={options.yesOrNo[0]}
-            maxWidthOptions={188}
+            maxWidthOptions={220}
             color="black"
           />
         </Box>
@@ -133,7 +133,7 @@ const CompanyForm: React.FC = () => (
             options={options.yesOrNo}
             isSearchable={false}
             defaultValue={options.yesOrNo[0]}
-            maxWidthOptions={188}
+            maxWidthOptions={220}
             color="black"
           />
         </Box>
