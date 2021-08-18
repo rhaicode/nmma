@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import {
   Box,
+  BoxProps,
   Checkbox,
   Flex,
   Table,
@@ -54,17 +55,21 @@ const StyledFlex = styled(Flex)`
   }
 `
 
-type ThemedTableProps = {
+interface ThemedTableProps extends BoxProps {
   columns?: string[]
   rows?: Record<string, any>[]
 }
 
-const ThemedTable: React.FC<ThemedTableProps> = ({ columns, rows }) => {
+const ThemedTable: React.FC<ThemedTableProps> = ({
+  columns,
+  rows,
+  ...props
+}) => {
   const ref = useRef<HTMLDivElement>(null)
   const { mouseDownHandler } = useTableEvents({ ref })
 
   return (
-    <>
+    <Box w="100%" {...props}>
       <StyledFlex
         pl="49px"
         mt="60px"
@@ -178,7 +183,7 @@ const ThemedTable: React.FC<ThemedTableProps> = ({ columns, rows }) => {
       <Box ml="49px" maxW="290px">
         <Pagination />
       </Box>
-    </>
+    </Box>
   )
 }
 
