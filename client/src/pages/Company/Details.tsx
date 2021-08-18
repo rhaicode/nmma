@@ -1,5 +1,5 @@
 import { Route, Switch, useHistory, useLocation } from 'react-router-dom'
-import { Flex } from '@chakra-ui/react'
+import { Flex, Box } from '@chakra-ui/react'
 
 import { CompanySidebar } from '../../components/shared'
 import { companyLinks } from '../../config/links'
@@ -30,58 +30,62 @@ const Details: React.FC = () => {
     <DefaultLayout noXPadding noYPadding>
       <Flex>
         <CompanySidebar />
-        <Switch>
-          <Route exact path="/company/:id">
-            <Profile />
-          </Route>
-          <Route exact path="/company/:id/contact">
-            <Contact />
-          </Route>
-          <Route exact path="/company/:id/boat-product">
-            <BoatProduct />
-          </Route>
-          <Route exact path="/company/:id/non-boat-product">
-            <div />
-          </Route>
-          <Route exact path="/company/:id/exhibitor">
-            <div />
-          </Route>
-          <Route exact path="/company/:id/exhibitor-boat-products">
-            <div />
-          </Route>
-          <Route exact path="/company/:id/exhibitor-products-services">
-            <div />
-          </Route>
-        </Switch>
+        <Box w="100%">
+          <Switch>
+            <Route exact path="/company/:id">
+              <Profile />
+            </Route>
+            <Route exact path="/company/:id/contact">
+              <Contact />
+            </Route>
+            <Route exact path="/company/:id/boat-product">
+              <BoatProduct />
+            </Route>
+            <Route exact path="/company/:id/non-boat-product">
+              <div />
+            </Route>
+            <Route exact path="/company/:id/exhibitor">
+              <div />
+            </Route>
+            <Route exact path="/company/:id/exhibitor-boat-products">
+              <div />
+            </Route>
+            <Route exact path="/company/:id/exhibitor-products-services">
+              <div />
+            </Route>
+          </Switch>
+        </Box>
       </Flex>
     </DefaultLayout>
   ) : (
     <PublicLayout>
       <Flex>
         <CompanySidebar />
-        <Switch>
-          <Route exact path="/company/:id">
-            <Profile />
-          </Route>
-          <Route exact path="/company/:id/contact">
-            <Contact />
-          </Route>
-          <Route exact path="/company/:id/boat-product">
-            <BoatProduct />
-          </Route>
-          <Route exact path="/company/:id/non-boat-product">
-            <div />
-          </Route>
-          <Route exact path="/company/:id/exhibitor">
-            <div />
-          </Route>
-          <Route exact path="/company/:id/exhibitor-boat-products">
-            <div />
-          </Route>
-          <Route exact path="/company/:id/exhibitor-products-services">
-            <div />
-          </Route>
-        </Switch>
+        <Box w="100%">
+          <Switch>
+            <Route exact path="/company/:id">
+              <Profile />
+            </Route>
+            <Route exact path="/company/:id/contact">
+              <Contact />
+            </Route>
+            <Route exact path="/company/:id/boat-product">
+              <BoatProduct />
+            </Route>
+            <Route exact path="/company/:id/non-boat-product">
+              <div />
+            </Route>
+            <Route exact path="/company/:id/exhibitor">
+              <div />
+            </Route>
+            <Route exact path="/company/:id/exhibitor-boat-products">
+              <div />
+            </Route>
+            <Route exact path="/company/:id/exhibitor-products-services">
+              <div />
+            </Route>
+          </Switch>
+        </Box>
       </Flex>
     </PublicLayout>
   )

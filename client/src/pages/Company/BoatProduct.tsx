@@ -36,41 +36,34 @@ const list = Array.from({ length: 7 }).map(() => ({
 const BoatProduct: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
-    <>
-      <Flex w="full" pb="171px">
-        <Box mx="auto" mt="54px">
-          <Flex
-            justifyContent="space-between"
-            alignItems="center"
-            ml="51px"
-            w="46.25%"
-          >
-            <Box>
-              <Text as="span" fontSize="32px" fontWeight="600">
-                Boat Product
-              </Text>
-              <Text as="span" display="block" fontSize="13px" color="darkGray">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit
-              </Text>
-            </Box>
-            <ThemedButton
-              type="button"
-              onClick={onOpen}
-              leftIcon={<FiPlus color="white" fontSize="22px" />}
-            >
-              <Text as="span" ml="8px">
-                Create
-              </Text>
-            </ThemedButton>
-          </Flex>
-          <Box position="relative">
-            <ThemedTable columns={columns} rows={list} />
-          </Box>
+    <Box pb="171px">
+      <Flex
+        justifyContent="space-between"
+        mt="54px"
+        ml="51px"
+        w="calc(100% - 300px)"
+      >
+        <Box>
+          <Text as="span" fontSize="32px" fontWeight="600">
+            Boat Product
+          </Text>
+          <Text as="span" display="block" fontSize="13px" color="darkGray">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+          </Text>
         </Box>
+        <ThemedButton
+          type="button"
+          onClick={onOpen}
+          leftIcon={<FiPlus color="white" fontSize="22px" />}
+        >
+          <Text as="span" ml="8px">
+            Create
+          </Text>
+        </ThemedButton>
       </Flex>
-
+      <ThemedTable columns={columns} rows={list} w="calc(100% - 200px)" />
       <CreateContactForm isOpen={isOpen} onClose={onClose} />
-    </>
+    </Box>
   )
 }
 
