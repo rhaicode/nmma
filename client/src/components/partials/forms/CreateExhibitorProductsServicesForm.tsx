@@ -15,6 +15,7 @@ import {
   ThemedInput,
   ThemedLabel,
   ThemedSelect,
+  ThemedTextarea,
 } from '../../shared'
 import { StatusName } from '../../shared/Status'
 
@@ -24,51 +25,6 @@ type CreateExhibitorProductsServicesFormProps = {
 }
 
 const options = {
-  exhibitor: [
-    {
-      value: 'boats',
-      label: 'Boats',
-    },
-    { value: 'marineAccessories', label: 'Marine Accessories' },
-    {
-      value: 'fishingHuntingOutdoorGear',
-      label: 'Fishing, Hunting & Outdoor Gear',
-    },
-    { value: 'waterSportsEquipment', label: 'Water Sports Equipment' },
-    {
-      value: 'marineElectronicsAndNavigation',
-      label: 'Marine Electronics & Navigation',
-    },
-  ],
-  boatProduct: [
-    {
-      value: 'allPurposeFishingBoats',
-      label: 'All Purpose Fishing Boats',
-    },
-    {
-      value: 'aluminumFishingBoats',
-      label: 'Aluminum  Fishing Boats',
-    },
-    {
-      value: 'bassBoats',
-      label: 'Bass Boats',
-    },
-    {
-      value: 'bayBoatsOrFiatBoats',
-      label: 'Bay Boats / Fiat Boats',
-    },
-    {
-      value: 'bowriders',
-      label: 'Bowriders',
-    },
-  ],
-  brand: [
-    { value: 'alumaCraft', label: 'Aluma Craft' },
-    { value: 'aquila', label: 'Aquila' },
-    { value: 'beneteau', label: 'Beneteau' },
-    { value: 'bennington', label: 'Bennington' },
-    { value: 'carolinaSkriff', label: 'Carolina Skriff' },
-  ],
   status: [
     {
       value: StatusName.Active.toLowerCase(),
@@ -117,46 +73,15 @@ const CreateExhibitorProductsServicesForm: React.FC<CreateExhibitorProductsServi
           <ModalBody paddingLeft="32px" paddingRight="32px">
             <Grid
               mt="20px"
-              templateColumns="1fr"
+              templateColumns="repeat(2,1fr)"
               autoColumns="max-content"
               autoRows="auto"
               rowGap="18px"
               columnGap="16px"
             >
               <Box>
-                <ThemedLabel htmlFor="exhibitor">Exhibitor</ThemedLabel>
-                <ThemedSelect
-                  id="exhibitor"
-                  options={options.exhibitor}
-                  isSearchable={false}
-                  defaultValue={options.exhibitor[0]}
-                  maxWidthOptions={372}
-                />
-              </Box>
-              <Box>
-                <ThemedLabel htmlFor="boatProduct">Boat Product</ThemedLabel>
-                <ThemedSelect
-                  id="boatProduct"
-                  options={options.boatProduct}
-                  isSearchable={false}
-                  defaultValue={options.boatProduct[0]}
-                  maxWidthOptions={372}
-                />
-              </Box>
-              <Box>
-                <ThemedLabel htmlFor="brand">Brand</ThemedLabel>
-                <ThemedSelect
-                  id="brand"
-                  options={options.brand}
-                  isSearchable={false}
-                  defaultValue={options.brand[0]}
-                  maxWidthOptions={372}
-                  isMulti
-                />
-              </Box>
-              <Box>
-                <ThemedLabel htmlFor="booth">Booth</ThemedLabel>
-                <ThemedInput id="booth" />
+                <ThemedLabel htmlFor="name">Name</ThemedLabel>
+                <ThemedInput id="name" />
               </Box>
               <Box>
                 <ThemedLabel htmlFor="status">Status</ThemedLabel>
@@ -165,8 +90,16 @@ const CreateExhibitorProductsServicesForm: React.FC<CreateExhibitorProductsServi
                   options={options.status}
                   isSearchable={false}
                   defaultValue={options.status[0]}
-                  maxWidthOptions={372}
+                  maxWidthOptions={299}
                 />
+              </Box>
+              <Box gridColumn="1/3">
+                <ThemedLabel htmlFor="uploadFiles">Upload Files</ThemedLabel>
+                <ThemedInput id="uploadFiles" />
+              </Box>
+              <Box gridColumn="1/3">
+                <ThemedLabel htmlFor="description">Description</ThemedLabel>
+                <ThemedTextarea id="description" />
               </Box>
             </Grid>
           </ModalBody>
