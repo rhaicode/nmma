@@ -52,7 +52,7 @@ const Shows: React.FC = () => {
             </Text>
           </ThemedButton>
         </Flex>
-        <ThemedTable columns={columns} rows={list} />
+        <ThemedTable columns={columns} rows={list} mt="60px" />
       </DefaultLayout>
       <CreateShowForm isOpen={isOpen} onClose={onClose} />
     </>

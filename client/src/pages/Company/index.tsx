@@ -60,7 +60,7 @@ const Company: React.FC = () => {
             </Text>
           </ThemedButton>
         </Flex>
-        <ThemedTable columns={columns} rows={list} />
+        <ThemedTable columns={columns} rows={list} mt="60px" />
       </DefaultLayout>
       <CreateCompanyForm isOpen={isOpen} onClose={onClose} />
     </>

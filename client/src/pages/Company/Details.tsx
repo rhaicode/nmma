@@ -9,6 +9,10 @@ import PublicLayout from '../../layouts/PublicLayout'
 import Profile from './Profile'
 import Contact from './Contact'
 import BoatProduct from './BoatProduct'
+import NonBoatProduct from './NonBoatProduct'
+import Exhibitor from './Exhibitor'
+import ExhibitorBoatProducts from './ExhibitorBoatProducts'
+import ExhibitorProductsServices from './ExhibitorProductsServices'
 
 const Details: React.FC = () => {
   const location = useLocation()
@@ -26,8 +30,17 @@ const Details: React.FC = () => {
     push('/404')
   }
 
-  return isPrivate ? (
-    <DefaultLayout noXPadding noYPadding>
+  const Container: React.FC = ({ children }) =>
+    isPrivate ? (
+      <DefaultLayout noXPadding noYPadding>
+        {children}
+      </DefaultLayout>
+    ) : (
+      <PublicLayout>{children}</PublicLayout>
+    )
+
+  return (
+    <Container>
       <Flex>
         <CompanySidebar />
         <Box w="100%">
@@ -42,52 +55,21 @@ const Details: React.FC = () => {
               <BoatProduct />
             </Route>
             <Route exact path="/company/:id/non-boat-product">
-              <div />
+              <NonBoatProduct />
             </Route>
             <Route exact path="/company/:id/exhibitor">
-              <div />
+              <Exhibitor />
             </Route>
             <Route exact path="/company/:id/exhibitor-boat-products">
-              <div />
+              <ExhibitorBoatProducts />
             </Route>
             <Route exact path="/company/:id/exhibitor-products-services">
-              <div />
+              <ExhibitorProductsServices />
             </Route>
           </Switch>
         </Box>
       </Flex>
-    </DefaultLayout>
-  ) : (
-    <PublicLayout>
-      <Flex>
-        <CompanySidebar />
-        <Box w="100%">
-          <Switch>
-            <Route exact path="/company/:id">
-              <Profile />
-            </Route>
-            <Route exact path="/company/:id/contact">
-              <Contact />
-            </Route>
-            <Route exact path="/company/:id/boat-product">
-              <BoatProduct />
-            </Route>
-            <Route exact path="/company/:id/non-boat-product">
-              <div />
-            </Route>
-            <Route exact path="/company/:id/exhibitor">
-              <div />
-            </Route>
-            <Route exact path="/company/:id/exhibitor-boat-products">
-              <div />
-            </Route>
-            <Route exact path="/company/:id/exhibitor-products-services">
-              <div />
-            </Route>
-          </Switch>
-        </Box>
-      </Flex>
-    </PublicLayout>
+    </Container>
   )
 }
 
