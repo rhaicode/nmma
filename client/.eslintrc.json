@@ -81,6 +81,8 @@
     "object-curly-newline": "off",
     "no-shadow": "off",
     "indent": "off",
-    "operator-linebreak": "off"
+    "operator-linebreak": "off",
+    "no-confusing-arrow": "off",
+    "implicit-arrow-linebreak": "off"
   }
 }

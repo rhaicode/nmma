@@ -17,9 +17,9 @@ type StatusProps = {
 const colors = {
   [StatusName.Active]: '#00CB00',
   [StatusName.Approved]: '#00CB00',
-  [StatusName.Cancelled]: '##FF4144',
-  [StatusName.Closed]: '##FF4144',
-  [StatusName.Declined]: '##FF4144',
+  [StatusName.Cancelled]: '#FF4144',
+  [StatusName.Closed]: '#FF4144',
+  [StatusName.Declined]: '#FF4144',
   [StatusName.Pending]: '#FDB713',
 }
 
@@ -27,12 +27,13 @@ const Status: React.FC<StatusProps> = ({ name }) => (
   <Text
     as="span"
     display="block"
-    px="22px"
     py="4px"
     backgroundColor={colors[name]}
     fontSize="14px"
     color="white"
     borderRadius="25px"
+    w="110px !important"
+    textAlign="center"
   >
     {name}
   </Text>

@@ -1,10 +1,10 @@
 import { Flex, Box, Text, useDisclosure, Grid, Image } from '@chakra-ui/react'
+import styled from '@emotion/styled'
 import React from 'react'
 import { FiPlus } from 'react-icons/fi'
-
 import uuid from 'react-uuid'
 
-import { CreateBoatProductForm } from '../../components/partials'
+import { CreateNonBoatProductForm } from '../../components/partials'
 import {
   ThemedButton,
   ThemedSelect,
@@ -14,36 +14,41 @@ import {
 const columns = [
   'ID',
   'Image',
-  'Brand Company',
-  'Source Product Code',
-  'Boat Type',
-  'Model Year',
-  'Length',
-  'Propulsion Type',
-  'Certified Flag',
-  'Starting Price',
+  'Name',
+  'Brand Name',
   'Description',
+  'Product',
+  'Category',
+  'Sub Category',
 ]
+
 const list = Array.from({ length: 7 }).map(() => ({
   uuid: uuid(),
   id: '001',
   image: <Image src="/assets/png/boat.png" alt="boat" />,
-  brandCompany: 'Company Name',
-  sourceProductCode: 'CBS2021',
-  boatType: '-',
-  modelYear: '2008',
-  length: `19'6"`,
-  propulsionType: 'Outboard',
-  certifiedFlag: '-',
-  startingPrice: '-',
-  description: '-',
+  name: 'Lorem ipsum',
+  brandName: 'Company Name',
+  description: 'CBS2021',
+  product: 'Product Name',
+  category: 'Boats',
+  subCategory: 'All Purpose Fishing Boats',
 }))
 
 const options = {
   filters: [{ value: 'all', label: 'All' }],
 }
 
-const BoatProduct: React.FC = () => {
+const StyledThemedTable = styled(ThemedTable)`
+  & {
+    width: calc(100% - 200px);
+
+    @media (min-width: 1560px) {
+      width: calc(100% - 50px);
+    }
+  }
+`
+
+const NonBoatProduct: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <Box pb="171px">
@@ -55,7 +60,7 @@ const BoatProduct: React.FC = () => {
       >
         <Box>
           <Text as="span" fontSize="32px" fontWeight="600">
-            Boat Product
+            Non-Boat Product
           </Text>
           <Text as="span" display="block" fontSize="13px" color="darkGray">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -95,15 +100,10 @@ const BoatProduct: React.FC = () => {
           hasShadow
         />
       </Grid>
-      <ThemedTable
-        columns={columns}
-        rows={list}
-        w="calc(100% - 200px)"
-        mt="24px"
-      />
-      <CreateBoatProductForm isOpen={isOpen} onClose={onClose} />
+      <StyledThemedTable columns={columns} rows={list} mt="24px" />
+      <CreateNonBoatProductForm isOpen={isOpen} onClose={onClose} />
     </Box>
   )
 }
 
-export default BoatProduct
+export default NonBoatProduct

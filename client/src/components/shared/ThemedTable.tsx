@@ -72,7 +72,6 @@ const ThemedTable: React.FC<ThemedTableProps> = ({
     <Box w="100%" {...props}>
       <StyledFlex
         pl="49px"
-        mt="60px"
         mb="35px"
         overflow="auto"
         ref={ref}
@@ -155,7 +154,7 @@ const ThemedTable: React.FC<ThemedTableProps> = ({
                           )
                         }
 
-                        return <Td>{`${r[column]}`}</Td>
+                        return <Td>{r[column]}</Td>
                       })
                     ) : (
                       <></>

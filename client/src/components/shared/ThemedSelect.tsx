@@ -8,6 +8,8 @@ type ThemedSelectProps = {
   defaultValue: { label: string; value: string }
   maxWidthOptions: number
   color?: string
+  hasShadow?: boolean
+  isMulti?: boolean
 }
 
 const StyledSelect = styled(Select)`
@@ -21,8 +23,11 @@ const StyledSelect = styled(Select)`
 
     > div:first-of-type {
       border-radius: 10px;
-      border-color: #bdc6d9;
-      height: 50px;
+      border-color: ${({ hasShadow }) =>
+        hasShadow ? 'transparent' : '#bdc6d9'};
+      box-shadow: ${({ hasShadow }) =>
+        hasShadow ? '0px 4px 5px rgba(0, 0, 0, 0.05)' : 'none'};
+      min-height: 50px;
       cursor: pointer !important;
       > div:first-of-type {
         /* background-color: #111827; */
@@ -87,6 +92,8 @@ const ThemedSelect: React.FC<ThemedSelectProps> = ({
   defaultValue,
   maxWidthOptions,
   color,
+  hasShadow,
+  isMulti,
 }) => {
   const marginTopAtValueOf = options[0].value
   const marginBottomAtValueOf = options.slice(-1)[0].value
@@ -105,6 +112,8 @@ const ThemedSelect: React.FC<ThemedSelectProps> = ({
         selectedColor,
       })}
       selectedColor={selectedColor}
+      hasShadow={hasShadow}
+      isMulti={isMulti}
     />
   )
 }
