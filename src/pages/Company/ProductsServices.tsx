@@ -1,10 +1,11 @@
 import { Flex, Box, Text, useDisclosure, Grid, Image } from '@chakra-ui/react'
 import styled from '@emotion/styled'
+import { sample } from 'lodash'
 import React from 'react'
 import { FiPlus } from 'react-icons/fi'
 import uuid from 'react-uuid'
 
-import { CreateNonBoatProductForm } from '../../components/partials'
+import { CreateProductsServicesForm } from '../../components/partials'
 import {
   ThemedButton,
   ThemedSelect,
@@ -26,7 +27,7 @@ const list = Array.from({ length: 7 }).map(() => ({
   uuid: uuid(),
   id: '001',
   image: <Image src="/assets/png/boat.png" alt="boat" />,
-  name: 'Lorem ipsum',
+  name: sample(['Product A', 'Product B', 'Product C']),
   brandName: 'Company Name',
   description: 'CBS2021',
   product: 'Product Name',
@@ -48,7 +49,7 @@ const StyledThemedTable = styled(ThemedTable)`
   }
 `
 
-const NonBoatProduct: React.FC = () => {
+const ProductsServices: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <Box pb="171px">
@@ -60,7 +61,7 @@ const NonBoatProduct: React.FC = () => {
       >
         <Box>
           <Text as="span" fontSize="32px" fontWeight="600">
-            Non-Boat Product
+            Products &amp; Services
           </Text>
           <Text as="span" display="block" fontSize="13px" color="darkGray">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -101,9 +102,9 @@ const NonBoatProduct: React.FC = () => {
         />
       </Grid>
       <StyledThemedTable columns={columns} rows={list} mt="24px" />
-      <CreateNonBoatProductForm isOpen={isOpen} onClose={onClose} />
+      <CreateProductsServicesForm isOpen={isOpen} onClose={onClose} />
     </Box>
   )
 }
 
-export default NonBoatProduct
+export default ProductsServices

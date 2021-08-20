@@ -14,6 +14,7 @@ import {
 const columns = [
   'ID',
   'Image',
+  'Name',
   'Brand Company',
   'Source Product Code',
   'Boat Type',
@@ -28,6 +29,7 @@ const list = Array.from({ length: 7 }).map(() => ({
   uuid: uuid(),
   id: '001',
   image: <Image src="/assets/png/boat.png" alt="boat" />,
+  name: 'Sample Boat Name',
   brandCompany: 'Company Name',
   sourceProductCode: 'CBS2021',
   boatType: '-',

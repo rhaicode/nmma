@@ -2,7 +2,7 @@ import CreateCompanyForm from './forms/CreateCompanyForm'
 import CreateShowForm from './forms/CreateShowForm'
 import CreateContactForm from './forms/CreateContactForm'
 import CreateBoatProductForm from './forms/CreateBoatProductForm'
-import CreateNonBoatProductForm from './forms/CreateNonBoatProductForm'
+import CreateProductsServicesForm from './forms/CreateProductsServicesForm'
 import CreateExhibitorForm from './forms/CreateExhibitorForm'
 import CreateExhibitorBoatProductsForm from './forms/CreateExhibitorBoatProductsForm'
 import CreateExhibitorProductsServicesForm from './forms/CreateExhibitorProductsServicesForm'
@@ -15,7 +15,7 @@ export {
   CreateShowForm,
   CreateContactForm,
   CreateBoatProductForm,
-  CreateNonBoatProductForm,
+  CreateProductsServicesForm,
   CreateExhibitorForm,
   CreateExhibitorBoatProductsForm,
   CreateExhibitorProductsServicesForm,

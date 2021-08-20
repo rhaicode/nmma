@@ -134,22 +134,22 @@ const CreateExhibitorBoatProductsForm: React.FC<CreateExhibitorBoatProductsFormP
                 />
               </Box>
               <Box>
-                <ThemedLabel htmlFor="boatProduct">Boat Product</ThemedLabel>
-                <ThemedSelect
-                  id="boatProduct"
-                  options={options.boatProduct}
-                  isSearchable={false}
-                  defaultValue={options.boatProduct[0]}
-                  maxWidthOptions={372}
-                />
-              </Box>
-              <Box>
                 <ThemedLabel htmlFor="brand">Brand</ThemedLabel>
                 <ThemedSelect
                   id="brand"
                   options={options.brand}
                   isSearchable={false}
                   defaultValue={options.brand[0]}
+                  maxWidthOptions={372}
+                />
+              </Box>
+              <Box>
+                <ThemedLabel htmlFor="boatProduct">Boat Product</ThemedLabel>
+                <ThemedSelect
+                  id="boatProduct"
+                  options={options.boatProduct}
+                  isSearchable={false}
+                  defaultValue={options.boatProduct[0]}
                   maxWidthOptions={372}
                   isMulti
                 />

@@ -31,8 +31,8 @@ export const companyLinks = [
     url: '/boat-product',
   },
   {
-    label: 'Non-Boat Product',
-    url: '/non-boat-product',
+    label: 'Products & Services',
+    url: '/products-services',
   },
   {
     label: 'Exhibitor',
