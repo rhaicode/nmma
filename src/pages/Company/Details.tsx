@@ -9,7 +9,7 @@ import PublicLayout from '../../layouts/PublicLayout'
 import Profile from './Profile'
 import Contact from './Contact'
 import BoatProduct from './BoatProduct'
-import NonBoatProduct from './NonBoatProduct'
+import ProductsServices from './ProductsServices'
 import Exhibitor from './Exhibitor'
 import ExhibitorBoatProducts from './ExhibitorBoatProducts'
 import ExhibitorProductsServices from './ExhibitorProductsServices'
@@ -54,8 +54,8 @@ const Details: React.FC = () => {
             <Route exact path="/company/:id/boat-product">
               <BoatProduct />
             </Route>
-            <Route exact path="/company/:id/non-boat-product">
-              <NonBoatProduct />
+            <Route exact path="/company/:id/products-services">
+              <ProductsServices />
             </Route>
             <Route exact path="/company/:id/exhibitor">
               <Exhibitor />

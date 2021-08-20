@@ -25,6 +25,21 @@ type CreateExhibitorProductsServicesFormProps = {
 }
 
 const options = {
+  brand: [
+    { value: 'alumaCraft', label: 'Aluma Craft' },
+    { value: 'aquila', label: 'Aquila' },
+    { value: 'beneteau', label: 'Beneteau' },
+    { value: 'bennington', label: 'Bennington' },
+    { value: 'carolinaSkriff', label: 'Carolina Skriff' },
+  ],
+  productsServices: [
+    {
+      value: 'Product A',
+      label: 'Product A',
+    },
+    { value: 'Product B', label: 'Product B' },
+    { value: 'Product C', label: 'Product C' },
+  ],
   status: [
     {
       value: StatusName.Active.toLowerCase(),
@@ -93,6 +108,40 @@ const CreateExhibitorProductsServicesForm: React.FC<CreateExhibitorProductsServi
                   maxWidthOptions={299}
                 />
               </Box>
+              <Box gridColumn="1/3">
+                <ThemedLabel htmlFor="brand">Brand</ThemedLabel>
+                <ThemedSelect
+                  id="brand"
+                  options={options.brand}
+                  isSearchable={false}
+                  defaultValue={options.brand[0]}
+                  maxWidthOptions={675}
+                  isMulti
+                />
+              </Box>
+              <Box gridColumn="1/3">
+                <ThemedLabel htmlFor="productsServices">
+                  Products &amp; Services
+                </ThemedLabel>
+                <ThemedSelect
+                  id="productsServices"
+                  options={options.productsServices}
+                  isSearchable={false}
+                  defaultValue={options.productsServices[0]}
+                  maxWidthOptions={675}
+                  isMulti
+                />
+              </Box>
+              {/* <Box gridColumn="1/3">
+                <ThemedLabel htmlFor="subCategory">Sub Category</ThemedLabel>
+                <ThemedSelect
+                  id="subCategory"
+                  options={options.subCategory}
+                  isSearchable={false}
+                  defaultValue={options.subCategory[0]}
+                  maxWidthOptions={675}
+                />
+              </Box> */}
               <Box gridColumn="1/3">
                 <ThemedLabel htmlFor="uploadFiles">Upload Files</ThemedLabel>
                 <ThemedInput id="uploadFiles" />

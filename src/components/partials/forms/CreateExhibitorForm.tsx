@@ -64,6 +64,16 @@ const options = {
       label: 'Bowriders',
     },
   ],
+  contact: [
+    {
+      value: 'contactA',
+      label: 'Contact A',
+    },
+    {
+      value: 'contactB',
+      label: 'Contact B',
+    },
+  ],
   yesOrNo: [
     { value: 'yes', label: 'Yes' },
     { value: 'no', label: 'No' },
@@ -115,7 +125,13 @@ const CreateExhibitorForm: React.FC<CreateExhibitorFormProps> = ({
             </Box>
             <Box>
               <ThemedLabel htmlFor="contact">Contact</ThemedLabel>
-              <ThemedInput id="contact" />
+              <ThemedSelect
+                id="contact"
+                options={options.contact}
+                isSearchable={false}
+                defaultValue={options.contact[0]}
+                maxWidthOptions={299}
+              />
             </Box>
             <Box>
               <ThemedLabel htmlFor="exhibitorType">Exhibitor Type</ThemedLabel>

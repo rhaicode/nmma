@@ -101,6 +101,10 @@ const CreateBoatProductForm: React.FC<CreateBoatProductFormProps> = ({
             rowGap="18px"
             columnGap="16px"
           >
+            <Box gridColumn="1/3">
+              <ThemedLabel htmlFor="name">Name</ThemedLabel>
+              <ThemedInput id="name" />
+            </Box>
             <Box>
               <ThemedLabel htmlFor="brandCompany">Brand Company</ThemedLabel>
               <ThemedInput id="brandCompany" />

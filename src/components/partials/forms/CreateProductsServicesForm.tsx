@@ -18,7 +18,7 @@ import {
   ThemedTextarea,
 } from '../../shared'
 
-type CreateNonBoatProductFormProps = {
+type CreateProductsServicesFormProps = {
   isOpen: boolean
   onClose: () => void
 }
@@ -68,7 +68,7 @@ const options = {
   ],
 }
 
-const CreateNonBoatProductForm: React.FC<CreateNonBoatProductFormProps> = ({
+const CreateProductsServicesForm: React.FC<CreateProductsServicesFormProps> = ({
   isOpen,
   onClose,
 }) => (
@@ -78,7 +78,7 @@ const CreateNonBoatProductForm: React.FC<CreateNonBoatProductFormProps> = ({
       <form>
         <ModalHeader textAlign="center" pt="50px">
           <Text as="span" fontWeight="600" fontSize="32px">
-            Non-Boat Product
+            Products &amp; Services
           </Text>
         </ModalHeader>
         <ModalCloseButton
@@ -154,4 +154,4 @@ const CreateNonBoatProductForm: React.FC<CreateNonBoatProductFormProps> = ({
   </Modal>
 )
 
-export default CreateNonBoatProductForm
+export default CreateProductsServicesForm
